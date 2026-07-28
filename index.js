@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./config/dbConnect");
 const cors = require("cors");
+const corsOptions = require("./config/corOptions.js");
 const app = express();
 const { people } = require("./usersDB.js");
 
@@ -10,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/", require("./routes/root"));
