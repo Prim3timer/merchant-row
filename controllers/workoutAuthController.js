@@ -3,8 +3,8 @@ const bcrypt = require("bcrypt");
 const asyncHandler = require("express-async-handler");
 
 const handleLogin = asyncHandler(async (req, res) => {
-  console.log({ reqBody: req.body });
   const { username, password } = req.body;
+  console.log({ reqBody: req.body });
   if (!username || !password)
     return res
       .status(400)

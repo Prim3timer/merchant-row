@@ -6,7 +6,7 @@ const makeAnEntry = asyncHandler(async (req, res) => {
   console.log({ reqBody: req.body });
   const response = await Workout.create(req.body);
 
-  res.json(response);
+  res.json("work saved");
 });
 
 const getDoings = asyncHandler(async (req, res) => {

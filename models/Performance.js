@@ -1,11 +1,8 @@
 const mongoose = require("mongoose");
 
 const performancechema = new mongoose.Schema({
-  duration: {
-    type: Number,
-  },
-  round: {
-    type: Number,
+  exerciseTimings: {
+    type: Array,
   },
   oneExercise: {
     type: Number,
@@ -16,6 +13,9 @@ const performancechema = new mongoose.Schema({
   },
   userId: {
     type: String,
+  },
+  exerciseDets: {
+    type: Array,
   },
   mark: {
     type: Number,
