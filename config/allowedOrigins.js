@@ -5,6 +5,7 @@ const allowedOrigins = [
   "http://127.0.0.1:5500",
   "http://127.0.0.1:5502",
   "https://working-u1bt.onrender.com",
+  "https://prim3timer.github.io/vanilla-work/",
   "https://retail-solutions.onrender.com",
   // "https://prim3timer.github.io/Retailer",
   "https://prim3timer.github.io",
