@@ -14,6 +14,8 @@ connectDB();
 app.use(cors(corsOptions));
 app.use(express.json());
 
+console.log("on the server")
+
 app.use("/", require("./routes/root"));
 app.use("/users", require("./routes/userRoute"));
 app.use("/register", require("./routes/registerRoute"));
