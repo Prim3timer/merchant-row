@@ -15,8 +15,6 @@ const getDoings = asyncHandler(async (req, res) => {
     const { duration, round, oneExercise, date } = item;
     return { duration, round, oneExercise, date: format(date, "dd/mm/yyyy") };
   });
-  // console.log({ newResponse });
-  console.log({ response });
   res.send(response);
 });
 

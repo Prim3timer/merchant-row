@@ -10,7 +10,7 @@ const handleLogin = asyncHandler(async (req, res) => {
       .status(400)
       .json({ message: "username and password are required" });
   const foundUser = await WorkUserSchema.findOne({ username }).exec();
-  if (!foundUser || foundUser.verified !== true) res.sendStatus(401);
+  if (!foundUser) return res.status(401).json({message: 'no such username'});
   const match = await bcrypt.compare(password, foundUser.password);
   if (!match) return res.status(401).json({ message: "unauthorized" });
   const roles = Object.values(foundUser.roles).filter(Boolean);
