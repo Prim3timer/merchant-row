@@ -25,7 +25,7 @@ const getUserVerified = asyncHandler(async (req, res) => {
     { _id: id },
     { verified: true },
   );
-  res.json("Sucess!");
+  res.json("Verified!");
 });
 
 const resetPassword = asyncHandler(async (req, res) => {
