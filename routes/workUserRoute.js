@@ -8,6 +8,6 @@ router.route("/:id").patch(workUserController.editUserExercise);
 router.route("/verification/:id").patch(workUserController.getUserVerified);
 router.route("/reset-password/:id").patch(workUserController.resetPassword);
 router.route("/delete/:id").delete(workUserController.deletUser);
-router.route("/user-setting/:id").patch(workUserController.userSettingUpdate);
+router.route("/user-settings/:id").patch(workUserController.userSettingUpdate);
 
 module.exports = router;

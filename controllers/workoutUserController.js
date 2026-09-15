@@ -42,20 +42,22 @@ const resetPassword = asyncHandler(async (req, res) => {
 const userSettingUpdate = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { username, roles, active } = req.body;
+  console.log(username, roles, active)
   const foundUser = await WorkoutUserSchema.findById(id).exec();
   console.log({ foundUser });
   console.log({ username, roles, active });
-  const response = await WorkoutUserSchema.findOneAndUpdate(
-    { _id: id },
-    {
-      username,
-      roles: roles === undefined ? foundUser.roles : roles,
-      active,
-    },
-  );
-  if (response) {
+  // const response = await WorkoutUserSchema.findOneAndUpdate(
+  //   { _id: id },
+  //   {
+  //     username,
+  //     roles: roles === undefined ? foundUser.roles : roles,
+  //     active,
+  //   },
+  // );
+  // if (response) {
+  //   res.json("user updated");
+  // }
     res.json("user updated");
-  }
 });
 
 const deletUser = asyncHandler(async (req, res) => {
