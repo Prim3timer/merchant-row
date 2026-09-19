@@ -30,8 +30,9 @@ const deleteEntry = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "no entry found" });
   }
   const result = await entry.deleteOne();
+  const entries = await Workout.find()
   const reply = `Entry deleted`;
-  res.json(reply);
+  res.json({success: reply, entries});
 });
 module.exports = {
   makeAnEntry,
