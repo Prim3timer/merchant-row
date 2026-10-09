@@ -23,6 +23,7 @@ app.use("/performance", require("./routes/performanceRoute"));
 app.use("/workout-register", require("./routes/workRegRoute"));
 app.use("/workout-users", require("./routes/workUserRoute.js"));
 app.use("/workout-auth", require("./routes/workoutAuthRoute.js"));
+app.use("/exercise", require("./routes/exerciseRoute.js"));
 
 mongoose.connection.once("open", () => {
   console.log("connected to mongoDB");

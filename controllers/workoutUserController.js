@@ -1,6 +1,6 @@
 const WorkoutUserSchema = require("../models/WorkUser");
 const bcrypt = require("bcrypt");
-const asyncHandler = require("express-async-handler");
+const asyncHandler = require("express-async-handler");  
 
 const getWorkoutUsers = asyncHandler(async (req, res) => {
   const users = await WorkoutUserSchema.find();

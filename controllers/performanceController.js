@@ -32,7 +32,7 @@ const deleteEntry = asyncHandler(async (req, res) => {
   const result = await entry.deleteOne();
   const entries = await Workout.find()
   const reply = `Entry deleted`;
-  res.json({success: reply, entries});
+  res.json({success: reply  , entries});
 });
 module.exports = {
   makeAnEntry,
