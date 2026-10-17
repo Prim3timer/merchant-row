@@ -4,8 +4,17 @@ const asyncHandler = require('express-async-handler');
 const addExercise = asyncHandler(async (req, res) => {
   const { name, calories } = req.body;
   console.log({ name, calories });
-  const exercise = await Exercise.create(req.body);
-  res.status(201).json(exercise);
+  const exercises = await Exercise.find()
+const foundExercise = exercises.find(exercise => exercise.name == name)
+  console.log({foundExercise})
+  if (foundExercise){
+    res.status(409).json("duplicate exercise")
+  } else {
+    const exercise = await Exercise.create(req.body);
+    if (exercise){
+      res.status(201).json("exercise created");
+    }
+  }
 });
 
 const getExercises = asyncHandler(async (req, res) => {
