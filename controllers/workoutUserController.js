@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 const getWorkoutUsers = asyncHandler(async (req, res) => {
   const users = await WorkoutUserSchema.find();
   res.json(users);
+  // console.log({users})
 });
 
 const editUserExercise = asyncHandler(async (req, res) => {

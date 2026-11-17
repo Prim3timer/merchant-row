@@ -17,10 +17,27 @@ const foundExercise = exercises.find(exercise => exercise.name == name)
   }
 });
 
+
+
 const getExercises = asyncHandler(async (req, res) => {
   const exercises = await Exercise.find();
   res.json(exercises);
 });
+
+const editExercise = asyncHandler(async (req, res) => {
+  const id = req.params.id
+ const {name, calories} = req.body
+ const response = await Exercise.findByIdAndUpdate({_id: id},
+  {
+    name,
+    calories
+  }
+ )
+if (response){
+  res.json("exercise updated")
+
+}
+})
 
 const deleteEntry = asyncHandler(async (req, res) => {
   const exercise = await Exercise.findByIdAndDelete(req.params.id);
@@ -33,5 +50,6 @@ const deleteEntry = asyncHandler(async (req, res) => {
 module.exports = {
   addExercise,
   getExercises,
+  editExercise,
   deleteEntry
 };
